@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #ffe4ec, #f9f1ff);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -22,58 +22,52 @@
       background: white;
       padding: 50px 45px;
       border-radius: 35px;
-      box-shadow:
-        0 10px 30px rgba(214, 51, 132, 0.3),
-        0 20px 50px rgba(214, 51, 132, 0.2),
-        0 0 30px rgba(255, 182, 193, 0.5);
-      max-width: 620px;
+      box-shadow: 0 10px 30px rgba(255, 223, 0, 0.3),
+                  0 20px 50px rgba(0, 128, 0, 0.2),
+                  0 0 30px rgba(100, 149, 237, 0.3);
+      max-width: 650px;
       text-align: center;
       position: relative;
-      transform-style: preserve-3d;
       animation: float 6s ease-in-out infinite;
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0) }
-      50% { transform: translateY(-10px) }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     h1 {
-      color: #d63384;
+      color: #ff9800; /* orange */
       font-size: 36px;
       margin-bottom: 22px;
-      font-family: 'Poppins', sans-serif;
-      text-shadow: 1px 1px 6px #f9c5d1;
+      text-shadow: 1px 1px 4px #ffd580;
+      animation: fadeIn 1.5s ease-in-out forwards;
     }
 
     p {
       font-size: 19px;
-      color: #444;
+      color: #222;
       margin: 12px 0;
       line-height: 1.5;
+      animation: fadeIn 2s ease-in-out forwards;
     }
 
     .quote {
       font-style: italic;
-      color: #666;
-      margin: 34px 0;
+      color: #555;
+      margin: 30px 0;
       font-size: 18px;
       line-height: 1.6;
-      text-shadow: 0 0 3px #bbb;
+      animation: fadeIn 2.5s ease-in-out forwards;
     }
 
     .final {
       font-size: 24px;
-      color: #8e44ad;
-      font-weight: 700;
-      margin-top: 38px;
-      text-shadow: 1px 1px 8px #b891d1;
-    }
-
-    .flowers {
-      font-size: 28px;
-      margin-top: 32px;
-      line-height: 1.8;
+      color: #2e8b57; /* sea green */
+      font-weight: bold;
+      margin-top: 30px;
+      text-shadow: 1px 1px 8px #a0e8d0;
+      animation: glow 2.5s infinite alternate;
     }
 
     .top-flowers, .bottom-flowers {
@@ -83,56 +77,65 @@
       right: 0;
       user-select: none;
       pointer-events: none;
-      animation: flower-wave 4s ease-in-out infinite;
-      filter: drop-shadow(0 0 2px #d63384);
+      animation: flowerRotate 6s linear infinite;
     }
 
     .top-flowers {
       top: -40px;
+      color: #ffcc00;
     }
 
     .bottom-flowers {
       bottom: -40px;
+      color: #32cd32;
       animation-delay: 2s;
     }
 
-    @keyframes flower-wave {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(5deg); }
+    @keyframes flowerRotate {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(0deg); }
     }
 
-    /* Special colorful phrase */
+    .like-you {
+      font-weight: bold;
+      font-size: 26px;
+      color: #ff69b4; /* hot pink */
+      margin-top: 10px;
+      animation: popIn 1.5s ease-in-out;
+    }
+
     .special-phrase {
       margin-top: 28px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 22px;
-      color: #222;
-      text-shadow:
-        2px 2px 5px #f06292,
-        -2px -2px 5px #ba68c8;
-      background: linear-gradient(90deg, #ff5f6d, #ffc371);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowText 6s linear infinite;
-      user-select: none;
+      font-size: 24px;
+      color: #1e90ff; /* Dodger Blue */
+      font-weight: bold;
+      animation: slideGlow 2.5s ease-in-out forwards;
     }
 
-    @keyframes rainbowText {
-      0%,100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* Colorful 'I like you' word */
-    .like-you {
-      font-weight: 800;
-      font-size: 28px;
-      background: linear-gradient(45deg, #ff4081, #f50057, #c51162);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px #f50057;
-      display: inline-block;
-      margin-top: 10px;
+    @keyframes slideGlow {
+      0% { opacity: 0; transform: translateX(-50px); text-shadow: none; }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        text-shadow: 0 0 8px #87cefa;
+      }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #00ffcc; }
+      100% { text-shadow: 0 0 20px #00ffcc; }
     }
   </style>
 </head>
@@ -147,15 +150,13 @@
     <p>Even though we met on Facebook, you became closer than anyone else. 💞</p>
 
     <div class="quote">
-      "In the quiet of my thoughts, your smile echoes the loudest."<br/>
+      "In the quiet of my thoughts, your smile echoes the loudest."<br />
       "Even stars feel shy when you look at them." ✨
     </div>
 
     <p class="like-you">I like you 💖</p>
 
-    <p class="special-phrase">
-      You know you are a <span style="color:#e91e63; font-weight: 700;">gift from God</span> to me, Orpa
-    </p>
+    <p class="special-phrase">You are a gift from God to me, Orpa 💙</p>
 
     <p class="final">💐 I want to be with you forever, Orpa. 💐</p>
 
