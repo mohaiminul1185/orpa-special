@@ -18,6 +18,10 @@
       overflow: hidden;
     }
 
+    audio {
+      display: none;
+    }
+
     .card {
       background: white;
       padding: 50px 45px;
@@ -36,12 +40,31 @@
       50% { transform: translateY(-10px); }
     }
 
+    h1, p, .quote, .like-you, .special-phrase, .final {
+      opacity: 0;
+      animation: waveIn 2s ease-in-out forwards;
+    }
+
+    h1 { animation-delay: 0.2s; }
+    p:nth-of-type(1) { animation-delay: 0.4s; }
+    p:nth-of-type(2) { animation-delay: 0.6s; }
+    p:nth-of-type(3) { animation-delay: 0.8s; }
+    .quote { animation-delay: 1s; }
+    .like-you { animation-delay: 1.2s; }
+    .special-phrase { animation-delay: 1.4s; }
+    .final { animation-delay: 1.6s; }
+
+    @keyframes waveIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      50% { opacity: 1; transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+
     h1 {
-      color: #ff9800; /* orange */
+      color: #ff9800;
       font-size: 36px;
       margin-bottom: 22px;
       text-shadow: 1px 1px 4px #ffd580;
-      animation: fadeIn 1.5s ease-in-out forwards;
     }
 
     p {
@@ -49,7 +72,6 @@
       color: #222;
       margin: 12px 0;
       line-height: 1.5;
-      animation: fadeIn 2s ease-in-out forwards;
     }
 
     .quote {
@@ -58,16 +80,14 @@
       margin: 30px 0;
       font-size: 18px;
       line-height: 1.6;
-      animation: fadeIn 2.5s ease-in-out forwards;
     }
 
     .final {
       font-size: 24px;
-      color: #2e8b57; /* sea green */
+      color: #2e8b57;
       font-weight: bold;
       margin-top: 30px;
       text-shadow: 1px 1px 8px #a0e8d0;
-      animation: glow 2.5s infinite alternate;
     }
 
     .top-flowers, .bottom-flowers {
@@ -75,9 +95,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      user-select: none;
-      pointer-events: none;
-      animation: flowerRotate 6s linear infinite;
+      animation: flowerDance 5s ease-in-out infinite;
     }
 
     .top-flowers {
@@ -91,55 +109,36 @@
       animation-delay: 2s;
     }
 
-    @keyframes flowerRotate {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(2deg); }
-      100% { transform: rotate(0deg); }
+    @keyframes flowerDance {
+      0% { transform: rotate(0deg) translateY(0); }
+      50% { transform: rotate(3deg) translateY(-10px); }
+      100% { transform: rotate(0deg) translateY(0); }
     }
 
     .like-you {
       font-weight: bold;
       font-size: 26px;
-      color: #ff69b4; /* hot pink */
+      color: #ff69b4;
       margin-top: 10px;
-      animation: popIn 1.5s ease-in-out;
     }
 
     .special-phrase {
       margin-top: 28px;
       font-size: 24px;
-      color: #1e90ff; /* Dodger Blue */
+      color: #1e90ff;
       font-weight: bold;
-      animation: slideGlow 2.5s ease-in-out forwards;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideGlow {
-      0% { opacity: 0; transform: translateX(-50px); text-shadow: none; }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-        text-shadow: 0 0 8px #87cefa;
-      }
-    }
-
-    @keyframes popIn {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes glow {
-      0% { text-shadow: 0 0 5px #00ffcc; }
-      100% { text-shadow: 0 0 20px #00ffcc; }
+      text-shadow: 0 0 8px #87cefa;
     }
   </style>
 </head>
 <body>
+
+  <!-- 🎵 Background Music -->
+  <audio autoplay loop id="bgmusic">
+    <source src="iwannabeyours.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <div class="card">
     <div class="top-flowers">🌸🌼🌷💮🌺🌹🌻🌼🌸</div>
 
@@ -154,13 +153,13 @@
       "Even stars feel shy when you look at them." ✨
     </div>
 
-    <p class="my-queen">to my queen 🌼💖</p>
+    <p class="like-you">I like you 💖</p>
 
-    <p class="special-phrase">You are a gift from God to me orpa 🌸🌼💙</p>
+    <p class="special-phrase">You are a gift from God to me, Orpa 💙</p>
 
-    <p class="final">💐 I want to be with you forever 💐</p>
+    <p class="final">💐 I want to be with you forever, Orpa. 💐</p>
 
     <div class="bottom-flowers">🌺💮🌼🌸🌻🌷🌹🌸🌼</div>
   </div>
 </body>
-</html>
+
