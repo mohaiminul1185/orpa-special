@@ -2,60 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>For Orpa 🌸</title>
+  <title>🌸 For Orpa 🌸</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
     body {
-      background: url('https://i.ibb.co/nRDfb5g/flowers-bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Segoe UI', sans-serif;
-      color: #333;
-      text-align: center;
-      padding: 60px 20px;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe4ec, #f9f1ff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
     }
+
     .card {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 40px;
-      max-width: 600px;
-      margin: 0 auto;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      background: white;
+      padding: 50px 45px;
+      border-radius: 35px;
+      box-shadow:
+        0 10px 30px rgba(214, 51, 132, 0.3),
+        0 20px 50px rgba(214, 51, 132, 0.2),
+        0 0 30px rgba(255, 182, 193, 0.5);
+      max-width: 620px;
+      text-align: center;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: float 6s ease-in-out infinite;
     }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) }
+      50% { transform: translateY(-10px) }
+    }
+
     h1 {
-      font-size: 32px;
       color: #d63384;
-      margin-bottom: 10px;
+      font-size: 36px;
+      margin-bottom: 22px;
+      font-family: 'Poppins', sans-serif;
+      text-shadow: 1px 1px 6px #f9c5d1;
     }
+
     p {
-      font-size: 18px;
-      margin: 10px 0;
+      font-size: 19px;
+      color: #444;
+      margin: 12px 0;
+      line-height: 1.5;
     }
+
     .quote {
       font-style: italic;
-      color: #555;
-      margin: 30px 0;
+      color: #666;
+      margin: 34px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      text-shadow: 0 0 3px #bbb;
     }
+
     .final {
-      font-size: 20px;
+      font-size: 24px;
       color: #8e44ad;
-      font-weight: bold;
-      margin-top: 30px;
+      font-weight: 700;
+      margin-top: 38px;
+      text-shadow: 1px 1px 8px #b891d1;
+    }
+
+    .flowers {
+      font-size: 28px;
+      margin-top: 32px;
+      line-height: 1.8;
+    }
+
+    .top-flowers, .bottom-flowers {
+      font-size: 36px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      user-select: none;
+      pointer-events: none;
+      animation: flower-wave 4s ease-in-out infinite;
+      filter: drop-shadow(0 0 2px #d63384);
+    }
+
+    .top-flowers {
+      top: -40px;
+    }
+
+    .bottom-flowers {
+      bottom: -40px;
+      animation-delay: 2s;
+    }
+
+    @keyframes flower-wave {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(5deg); }
+    }
+
+    /* Special colorful phrase */
+    .special-phrase {
+      margin-top: 28px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: #222;
+      text-shadow:
+        2px 2px 5px #f06292,
+        -2px -2px 5px #ba68c8;
+      background: linear-gradient(90deg, #ff5f6d, #ffc371);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 6s linear infinite;
+      user-select: none;
+    }
+
+    @keyframes rainbowText {
+      0%,100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Colorful 'I like you' word */
+    .like-you {
+      font-weight: 800;
+      font-size: 28px;
+      background: linear-gradient(45deg, #ff4081, #f50057, #c51162);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px #f50057;
+      display: inline-block;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>🌸 My pretty Orpa 🌸</h1>
-    <p>You came into my life like a breeze, soft and unforgettable.</p>
-    <p>You are a special gift from god to me.</p>
-    <p>Even though we met on Facebook, you became closer than anyone else.</p>
-    
+    <div class="top-flowers">🌸🌼🌷💮🌺🌹🌻🌼🌸</div>
+
+    <h1>My pretty Orpa 💗</h1>
+
+    <p>You came into my life like a breeze — soft, gentle, and unforgettable. 🌸</p>
+    <p>You're a rare flower that bloomed in the garden of my heart. 🌷</p>
+    <p>Even though we met on Facebook, you became closer than anyone else. 💞</p>
+
     <div class="quote">
       "In the quiet of my thoughts, your smile echoes the loudest."<br/>
-      "Even stars feel shy when you look at them."
+      "Even stars feel shy when you look at them." ✨
     </div>
 
-    <p>I like you — deeply and truly. You're a beautiful soul and you mean a lot to me.</p>
-    <p class="final">💖 I want to be with you forever, Orpa. 💐</p>
+    <p class="like-you">I like you 💖</p>
+
+    <p class="special-phrase">
+      You know you are a <span style="color:#e91e63; font-weight: 700;">gift from God</span> to me, Orpa
+    </p>
+
+    <p class="final">💐 I want to be with you forever, Orpa. 💐</p>
+
+    <div class="bottom-flowers">🌺💮🌼🌸🌻🌷🌹🌸🌼</div>
   </div>
 </body>
 </html>
